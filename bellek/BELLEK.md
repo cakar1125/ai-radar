@@ -1,58 +1,65 @@
 # AI Model Radar Bellek Dosyasi
-Son guncelleme: 2026-05-25
+Son guncelleme: 2026-06-14
 
 ## Tahmin Dogruluk Takibi
 
 | Tarih | Tahmin | Gerceklesti mi |
 |---|---|---|
 | 2026-05-25 | Ilk rapor — tahmin baslangici | — |
+| 2026-05-25 | Gemini 3.5 Pro Haziran basi GA | KISMI — hala onizleme, GA Haziran sonuna (23/30) kaydi |
+| 2026-05-25 | Llama 4 Behemoth | HAYIR — hala ortada yok |
+| 2026-05-25 | Muse Spark detaylari | HAYIR — yeni detay gelmedi |
+| 2026-05-25 | Unity AI genislemesi | KISMI — Muse devam, spesifik duyuru yok |
+| 2026-05-25 | Anthropic Stainless entegrasyonu | HAYIR — haber yok |
 
 ## En Hizli Haber Kaynaklari
 
 | Kaynak | Guc | Not |
 |---|---|---|
-| anthropic.com/news | Anthropic haberleri icin birincil | WebFetch calisiyor |
-| openai.com/news | HTTP 403 veriyor | WebSearch ile gecinilmeli |
-| blog.google | Google/Gemini icin en hizli | WebSearch + WebFetch |
-| huggingface.co/papers/trending | OSS model trendleri | Trending sayfasi okunabilir |
-| llm-stats.com/llm-updates | Gunluk tum model guncellemeleri ozeti | Yararli hub |
-| arena.ai/leaderboard/text | Arena Elo siralaması (lmarena.ai → arena.ai redirect) | Redirect dikkat |
-| langcopilot.com | Fiyat karsilastirmalari icin detayli | Aylik guncelleniyor |
+| anthropic.com/news | Anthropic icin birincil | WebFetch calisiyor, tarihli liste veriyor |
+| llm-stats.com/llm-updates | TUM model surumleri gunluk hub | EN VERIMLI tek kaynak — tarihli, lisans bilgili |
+| llm-stats.com/benchmarks/swe-bench-verified | SWE-Bench Verified guncel skorlar | Kodlama icin birincil benchmark |
+| openai.com/news | HTTP 403 | WebSearch ile gecil |
+| techtimes/codersera/wavespeed | Gemini sizinti/tahmin | Release penceresi tahminleri icin |
+| HuggingFace trending (presenc.ai aynasi) | OSS model trendleri | Cin modelleri agirlikli |
 
 ## Benchmark Tarihi
 
 | Tarih | Olay |
 |---|---|
-| 2026-05-25 | MMLU ve HumanEval artik saturated (90%+). Yeni oncelikli: GPQA Diamond, Humanity's Last Exam, SWE-Bench Verified, Terminal-Bench 2.0 |
-| 2026-05-25 | HumanEval #1: Claude Sonnet 4.5 (97.6%), #2: R1 (97.4%), #3: Grok 4 (97.0%) |
-| 2026-05-25 | Arena Elo Top 3 istatistiksel beraberlik: Claude Opus 4.6 (1504), Gemini 3.1 Pro Preview (1500), Claude Opus 4.6 Thinking (1500) |
-| 2026-05-25 | SWE-Bench Verified: GPT-5.2 80.0%, Gemini 3 Pro 76.2% |
+| 2026-05-25 | MMLU/HumanEval satured. Oncelikli: GPQA Diamond, SWE-Bench Verified, Terminal-Bench 2.0 |
+| 2026-06-14 | SWE-Bench Verified: Mythos 5 %95.5*, Fable 5 %95*, Opus 4.8 %88.6, GPT-5.5 %82.6, Gemini 3.5 Flash %78.8 (*kapatildi) |
+| 2026-06-14 | Arena Text Elo: Grok-4.1 Thinking 1483. Arena Hard: GPT-5.6 Pro ~1465, Mythos 5 ~1458. Top 8 ~55 Elo icinde (rekor sıkilik) |
+| 2026-06-14 | Indie icin fiili kodlama lideri: Claude Opus 4.8 (%88.6) — Mythos/Fable erisilemez |
 
 ## One Cikan Trendler
 
-1. Fiyat cokusu: 2025 basindan bu yana token maliyeti %60-80 dustu. Indie dev icin altin cag.
-2. Benchmark saturationu: Frontier modeller MMLU/HumanEval'de birbirinden ayrisapiyor. Daha zor benchmarklar one cikiyor.
-3. Agent odagi: Gemini Spark, Unity AI, GPT-5.5 memory+entegrasyon — tum buyuk oyuncular ajan ozelliklerine yatirim yapiyor.
-4. Open-source guclenyor: Kimi K2.6 (~1.1T), Qwen3 (Apache 2.0), Mistral Large 3 (Apache 2.0) ticari frontier modellerle yarisiyor.
-5. Meta strateji degisimi: Llama markasi bitti, Muse Spark geliyor (Apr 2026).
-6. Unity AI Open Beta: Oyun gelistirme AI entegrasyonunda milestone. Pro: $10/ay, kisisel ucretsiz deneme.
+1. **Devlet mudahalesi yeni risk:** ABD ihracat kontrolu Fable 5/Mythos 5'i 72 saatte kapatti (9 Haz cikti, 12 Haz kapandi). Frontier modeller jeopolitik riske acik.
+2. **YABANCI UYRUKLU ERISIM ENGELI:** Direktif ABD disi + yabanci uyruklulari kapsiyor. Mehmet (Turk) icin Fable 5/Mythos 5 erisilemez — bu modelleri onerme.
+3. Fiyat dususu suruyor: DeepSeek V4 Flash $0.14/$0.28; cache'de ~%90 indirim standart.
+4. Cin OSS konverjansi: 2 haftada 6 surum (Qwen 3.7, DeepSeek V4.1, Hunyuan Large 3, ERNIE 5.1, Doubao Pro, GLM-6). HF Top 10'un 5'i Cin.
+5. Motor-gomulu AI: Unity Muse + Unreal AI assistant cekirdek strateji. AAA stüdyolarin %78'i AI kullaniyor (GDC).
+6. Benchmark satured devam: pratikte SWE-Bench Verified + Arena Elo ayristirici.
 
-## Indie Dev icin Kanitlanmis Kullanımlar
+## Indie Dev icin Kanitlanmis Kullanimlar
 
 | Kullanim | Onerilen Model | Not |
 |---|---|---|
-| Oyun mekanigi kodu | Claude Sonnet 4.6 | Buyuk scriptler icin acik ara onde |
-| NPC diyalogu / hikaye | Claude Haiku 4.5 | Hizli + ucuz, dogal dil ustun |
-| 2D/3D asset konsept | Stable Diffusion (ComfyUI+ControlNet) | Unity/Unreal pipeline entegrasyonu var |
-| Asset fine-tuning | Leonardo.ai | Custom model egitimi, indie erisebilir |
-| Editor otomasyonu | Unity AI Open Beta | Mayis 2026 itibarıyla beta'da |
-| Ucretsiz prototipleme | Gemini 3.5 Flash | Ucretsiz tier, Google entegrasyonu guclu |
-| Budget API | DeepSeek V4 ($0.28/M) veya Haiku 4.5 ($1/M) | Maliyet kisitli projeler icin |
+| Buyuk oyun script / ajan | Claude Opus 4.8 | Erisilebilir frontier lider, $5/$25 |
+| NPC diyalogu / hikaye | Claude Haiku 4.5 | Hizli + ucuz |
+| Ucretsiz prototip | Gemini 3.5 Flash | Ucretsiz tier + hiz |
+| Budget API | DeepSeek V4 Flash ($0.14) | MIT lisans, yuksek hacim |
+| Lokal | Qwen 3.7 / Kimi K2.7 | Guclu GPU varsa sifir maliyet |
+| 3D asset | Meshy / Tripo | 30-60s, metin->oynanabilir |
+| 2D asset | Scenario / Layer | Stil tutarliligi |
+| Ses/muzik | ElevenLabs + Suno | SFX + muzik |
+| Editor ici | Unity Muse / Unreal AI | Motor-gomulu |
 
 ## Yaklasan Buyuk Cikislar (Bilinen)
 
 | Model | Sirket | Beklenen | Durum |
 |---|---|---|---|
-| Gemini 3.5 Pro | Google | Haziran 2026 basi | Dahili kullanımda, yakında |
-| Llama 4 Behemoth | Meta | Belirsiz | Hala egitimde |
-| Muse Spark detaylari | Meta Superintelligence Labs | Yakin | Strateji degisimi aciklandi |
+| Gemini 3.5 Pro GA | Google | Haziran sonu (23/30) | Vertex onizlemede, 2M baglam + Deep Think |
+| Fable 5 / Mythos 5 geri donus | Anthropic | Belirsiz | Anthropic direktife itiraz ediyor; yabanci erisim suplu |
+| Grok 5 | xAI | Gecikmis | Haziran dalgasinda soylenti |
+| Claude Sonnet 4.8 | Anthropic | Soylenti | Dogrulanmadi |
